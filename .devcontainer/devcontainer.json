@@ -1,26 +1,12 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "hostRequirements": {
-    "cpus": 4
+  "name": "My Codespace",
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:0-focal",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
   },
-  "waitFor": "onCreateCommand",
-  "updateContentCommand": "npm install && npm run build",
-  "postCreateCommand": "",
-  "postAttachCommand": {
-    "server": "npm run dev"
-  },
-  "customizations": {
-    "codespaces": {
-      "openFiles": [
-        "pages/index.js"
-      ]
-    }
-  },
-  "portsAttributes": {
-    "3000": {
-      "label": "Application",
-      "onAutoForward": "openPreview"
-    }
-  },
-  "forwardPorts": [3000]
+  "extensions": [
+    "ms-vscode.cpptools",
+    "ms-python.python"
+  ],
+  "postCreateCommand": "echo 'Codespace setup complete!'"
 }
